@@ -5,6 +5,7 @@ def remove_spaces_utf8(addr):
     space = u" "
     ret = u""
     for c in addr:
+        print c
         if c != space:
             ret += c
     return ret

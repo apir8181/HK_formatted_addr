@@ -61,7 +61,10 @@ class InvGeoCoding:
     def GetBigDistrict(self):
         smallDis = self.GetSmallDistrict().encode('utf-8')
         bigDis = hk_wiki.Maps.get(smallDis)
-        return u'无记录' if bigDis == None else bigDis
+        if bigDis == None:
+            return u'无记录'
+        else:
+            return bigDis.decode('utf-8')
 
 if __name__ == "__main__":
     while True:
